@@ -13,11 +13,12 @@ import { Parser } from "json2csv";
   const fetchedCards = [];
   for (let i = 0; i < cardCount; i++) {
     const cardLocator = cardLocators.locator(`nth=${i} >> a`);
+    const cardText = await cardLocator.textContent();
+
     await cardLocator.click();
     const companyLocator = page.locator(".card-title.company");
     const companyText = await companyLocator.textContent();
 
-    const cardText = await cardLocator.textContent();
     fetchedCards.push({
       name: cardText,
       company: companyText,
