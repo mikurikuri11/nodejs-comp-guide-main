@@ -1,11 +1,12 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import env from "dotenv";
 env.config();
+
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const secrets = require("../../../google_secrets.json");
 
-async () => {
+(async () => {
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
 
   await doc.useServiceAccountAuth({
@@ -18,6 +19,9 @@ async () => {
   const sheet = doc.sheetsByIndex[0];
   await sheet.loadCells("A1:C4");
 
-  const a1 = sheet.getCellByA1("A1");
+  const a1 = sheet.getCell(0, 0);
   console.log("a1", a1.value);
-};
+
+  const b2 = sheet.getCell(1, 1);
+  console.log("b2", b2.value);
+})();
