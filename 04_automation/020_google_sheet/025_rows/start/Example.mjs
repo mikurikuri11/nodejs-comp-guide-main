@@ -12,7 +12,9 @@ const secrets = require('../../../google_secrets.json');
         client_email: secrets.client_email,
         private_key: secrets.private_key
     });
-    
+
     await doc.loadInfo();
-    
+
+    doc.addSheet({ title: 'persons' });
+
 })();
