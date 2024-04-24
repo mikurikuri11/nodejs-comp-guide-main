@@ -15,6 +15,6 @@ const secrets = require('../../../google_secrets.json');
 
     await doc.loadInfo();
 
-    doc.addSheet({ title: 'persons' });
+    doc.addSheet({ title: 'persons', headerValues: ['name', 'age', 'gender']});
 
 })();
