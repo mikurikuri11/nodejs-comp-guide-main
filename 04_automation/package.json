@@ -1,7 +1,6 @@
 {
   "name": "09_automation",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
@@ -17,5 +16,6 @@
     "google-spreadsheet": "^3.3.0",
     "json2csv": "^5.0.7",
     "node-cron": "^3.0.2"
-  }
+  },
+  "description": ""
 }

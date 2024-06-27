@@ -24,12 +24,7 @@ const secrets = require('../../../google_secrets.json');
     const b1 = sheet.getCell(0,1);
     const b2 = sheet.getCellByA1('B2');
 
-    // console.log('a5', a5.textFormat);
-
-    a1.value = 400;
-    b1.value = 15;
-    b1.textFormat = { fontSize: 20, bold: true };
-    a5.value = '=sum(A1:A4)';
+    console.log(a1);
 
     await sheet.saveUpdatedCells();
 })();
