@@ -15,6 +15,13 @@ app.get('/products', function (req, res) {
   res.json(products);
 });
 
+app.post('/create-product', function (req, res) {
+  const newProduct = req.body;
+  products.push(newProduct);
+  console.log(products);
+  res.json(newProduct);
+});
+
 app.listen(PORT, function () {
   console.log(`Server start: http://localhost:${PORT}`);
 });
